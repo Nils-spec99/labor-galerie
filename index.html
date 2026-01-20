@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Labor-Galerie | Bildergalerie</title>
+    <title>Labor-Galerie | AG Weckmann</title>
     <style>
         * {
             margin: 0;
@@ -13,7 +13,7 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(to bottom, #005EB8 0%, #4A9FD8 100%);
             min-height: 100vh;
             padding: 20px;
         }
@@ -30,10 +30,26 @@
             padding: 20px;
         }
 
-        header h1 {
-            font-size: 2.5em;
+        header .logo-box {
+            background: white;
+            padding: 30px 50px;
+            border-radius: 15px;
+            display: inline-block;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        header .title {
+            font-size: 2.2em;
             margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            color: #005EB8;
+            font-weight: bold;
+        }
+
+        header h1 {
+            font-size: 2em;
+            margin: 0;
+            color: #E30613;
+            font-weight: bold;
         }
 
         header p {
@@ -178,8 +194,16 @@
                 padding: 10px;
             }
 
+            header .logo-box {
+                padding: 20px 30px;
+            }
+
+            header .title {
+                font-size: 1.5em;
+            }
+
             header h1 {
-                font-size: 1.8em;
+                font-size: 1.3em;
             }
 
             header p {
@@ -228,8 +252,10 @@
 <body>
     <div class="container">
         <header>
-            <h1>🔬 Labor-Galerie</h1>
-            <p>Bildergalerie der AG Weckmann</p>
+            <div class="logo-box">
+                <div class="title">Labor Bildergalerie</div>
+                <h1>ULG, Weckmann</h1>
+            </div>
         </header>
 
         <div class="gallery" id="gallery">
@@ -237,7 +263,7 @@
         </div>
 
         <footer>
-            <p>© 2026 Labor-Gruppe | UKSH</p>
+            <p>© 2026 AG Weckmann | FZB</p>
         </footer>
     </div>
 
@@ -253,46 +279,24 @@
     </div>
 
     <script>
-        // Alle 38 Bilder aus dem images Ordner
+        // Ausgewählte Bilder in der gewünschten Reihenfolge
         const imageFiles = [
-            'IMG_1870_2.jpg',
+            'IMG_1933_2.jpg',
+            'IMG_1924_2.jpg',
+            'IMG_1930_2.jpg',
+            'IMG_1882_2.jpg',
+            'IMG_1885_2.jpg',
+            'IMG_1895_2.jpg',
+            'IMG_1890_2.jpg',
+            'IMG_1914_2.jpg',
             'IMG_1871_2.jpg',
             'IMG_1872_2.jpg',
             'IMG_1874_2.jpg',
-            'IMG_1875_2.jpg',
             'IMG_1877_2.jpg',
-            'IMG_1878_2.jpg',
-            'IMG_1879_2.jpg',
             'IMG_1881_2.jpg',
-            'IMG_1882_2.jpg',
-            'IMG_1884_2.jpg',
-            'IMG_1885_2.jpg',
-            'IMG_1889_2.jpg',
-            'IMG_1890_2.jpg',
-            'IMG_1891_2.jpg',
-            'IMG_1895_2.jpg',
-            'IMG_1896_2.jpg',
-            'IMG_1903_2.jpg',
-            'IMG_1904_2.jpg',
-            'IMG_1905_2.jpg',
-            'IMG_1906_2.jpg',
-            'IMG_1907_2.jpg',
-            'IMG_1908_2.jpg',
-            'IMG_1913_2.jpg',
-            'IMG_1914_2.jpg',
-            'IMG_1916_2.jpg',
-            'IMG_1917_2.jpg',
-            'IMG_1918_2.jpg',
+            'IMG_1878_2.jpg',
             'IMG_1922_2.jpg',
-            'IMG_1923_2.jpg',
-            'IMG_1924_2.jpg',
-            'IMG_1925_2.jpg',
-            'IMG_1927_2.jpg',
-            'IMG_1928_2.jpg',
-            'IMG_1930_2.jpg',
-            'IMG_1932_2.jpg',
-            'IMG_1933_2.jpg',
-            'IMG_1936_2.jpg'
+            'IMG_1923_2.jpg'
         ];
 
         let currentImageIndex = 0;
@@ -309,12 +313,12 @@
 
                 const img = document.createElement('img');
                 img.src = `images/${image}`;
-                img.alt = `Labor Bild ${index + 1}`;
+                img.alt = `AG Weckmann Bild ${index + 1}`;
                 img.loading = 'lazy';
 
                 // Fallback wenn Bild nicht existiert
                 img.onerror = function() {
-                    this.src = 'https://via.placeholder.com/400x400/667eea/ffffff?text=Bild+wird+geladen';
+                    this.src = 'https://via.placeholder.com/400x400/005EB8/ffffff?text=Bild+wird+geladen';
                 };
 
                 div.appendChild(img);
